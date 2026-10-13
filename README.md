@@ -1,5 +1,8 @@
 # dsh-peak-runner
 
+[![npm](https://img.shields.io/npm/v/dsh-peak-runner?color=4176E6)](https://www.npmjs.com/package/dsh-peak-runner)
+[![ci](https://github.com/439436269-ctrl/dsh-peak-runner/actions/workflows/ci.yml/badge.svg)](https://github.com/439436269-ctrl/dsh-peak-runner/actions/workflows/ci.yml)
+
 DeepSeek **峰谷价感知**的任务执行器：平价时段直接跑 `deepseek-flash` 的任务批；峰价快到时把任务攒进队列、挂一条定时器，到下一个平价时段自动执行完。
 
 ## 它解决什么问题

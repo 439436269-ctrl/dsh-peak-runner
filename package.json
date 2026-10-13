@@ -46,5 +46,13 @@
 		"peak-offpeak",
 		"batch-runner",
 		"峰谷"
-	]
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/439436269-ctrl/dsh-peak-runner.git"
+	},
+	"homepage": "https://github.com/439436269-ctrl/dsh-peak-runner#readme",
+	"bugs": {
+		"url": "https://github.com/439436269-ctrl/dsh-peak-runner/issues"
+	}
 }

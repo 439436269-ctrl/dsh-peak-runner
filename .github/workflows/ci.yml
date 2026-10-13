@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Host packages (`@deepseek-ai/*`) are resolved by the harness, not by
+      # this repo. The tests stub them in a temp tree (see test/adapter.test.mjs),
+      # so a bare runner needs no install step and no secrets.
+      - name: Unit and adapter tests
+        run: node --test test/*.test.mjs
