@@ -1,0 +1,50 @@
+{
+	"name": "dsh-peak-runner",
+	"version": "0.1.0",
+	"description": "DeepSeek 峰谷价感知的任务执行器：平价时段跑 deepseek-flash 任务批，峰价前挂定时任务推迟到下一个平价时段执行。",
+	"type": "module",
+	"license": "MIT",
+	"main": "lib/index.js",
+	"files": [
+		"lib/**/*.js",
+		"cordis.patch.yml",
+		"README.md",
+		"LICENSE"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"scripts": {
+		"test": "node --test test/*.test.mjs"
+	},
+	"peerDependencies": {
+		"@deepseek-ai/cordis": "^4.0.1",
+		"@deepseek-ai/dsh-llm": "^0.2.0-rc.2",
+		"@deepseek-ai/dsh-storage-domain": "^0.2.0-rc.2",
+		"@deepseek-ai/dsh-system-prompt": "^0.2.0-rc.2",
+		"@deepseek-ai/dsh-tools": "^0.2.0-rc.2"
+	},
+	"dsh": {
+		"bundle": {
+			"patch": "./cordis.patch.yml"
+		},
+		"compatibility": {
+			"dshReleases": {
+				"0.2.0-rc.2": "compatible"
+			}
+		}
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"keywords": [
+		"dsh",
+		"dsh-plugin",
+		"deepseek-harness",
+		"deepseek",
+		"peak-offpeak",
+		"batch-runner",
+		"峰谷"
+	]
+}
